@@ -1,0 +1,8 @@
+# For C
+*.exe
+
+# For Java
+*.class
+
+# For VSCode
+.vscode
