@@ -25,6 +25,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.widget.TextView;
 
 public class DisplayActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
@@ -33,6 +34,15 @@ public class DisplayActivity extends AppCompatActivity implements LoaderManager.
     private TextView displayTextView;
     private String url;
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
